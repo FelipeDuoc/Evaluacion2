@@ -109,6 +109,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ElMonte4.mdf" />
+    <Content Include="App_Data\ElMonte4_log.ldf">
+      <DependentUpon>ElMonte4.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -117,6 +121,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Condena.cs" />
+    <Compile Include="Models\CondenaDelito.cs" />
+    <Compile Include="Models\Delito.cs" />
+    <Compile Include="Models\Juez.cs" />
+    <Compile Include="Models\Preso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,9 +141,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
