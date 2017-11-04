@@ -126,12 +126,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PresoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711010130086_primera migracion.cs" />
-    <Compile Include="Migrations\201711010130086_primera migracion.Designer.cs">
-      <DependentUpon>201711010130086_primera migracion.cs</DependentUpon>
+    <Compile Include="Migrations\201711041156146_Primera.cs" />
+    <Compile Include="Migrations\201711041156146_Primera.Designer.cs">
+      <DependentUpon>201711041156146_Primera.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Condena.cs" />
@@ -154,12 +155,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711010130086_primera migracion.resx">
-      <DependentUpon>201711010130086_primera migracion.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711041156146_Primera.resx">
+      <DependentUpon>201711041156146_Primera.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
