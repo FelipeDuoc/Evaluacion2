@@ -31,6 +31,61 @@ namespace ElMonte4.Controllers
             }
         };
 
+        //agrega preso
+        //api/preso
+        public IHttpActionResult post(Preso preso)
+        {
+
+            context.Presos.Add(preso);
+            int filasAfectadas = context.SaveChanges();
+
+            if (filasAfectadas == 0)
+            {
+                return InternalServerError();//500
+            }
+
+            return Ok(new { mensaje = "Agregado correctamente" });
+
+        }
+
+        //modifica presos
+        public IHttpActionResult put(Preso preso)
+        {
+            context.Entry(preso).State = System.Data.Entity.EntityState.Modified;
+
+            if (context.SaveChanges() > 0)
+            {
+                return Ok(new { Mensaje = "Modificado correctamente" });
+            }
+
+            return InternalServerError();
+
+
+
+        }
+
+        //elimina preso
+        public IHttpActionResult delete(int id)
+        {
+            //buscamos el cliente a eliminar
+            Preso preso = context.Presos.Find(id);
+
+            if (preso == null) return NotFound();//404
+
+            context.Presos.Remove(preso);
+
+            if (context.SaveChanges() > 0)
+            {
+                //retornamos codigo 200
+                return Ok(new { Mensaje = "Eliminado correctamente" });
+            }
+
+            return InternalServerError();//500
+
+        }
+
+
+        // listar presos
         public IEnumerable<Object> get()
         {
             return context.Presos.Include("Condena").Select(c => new
@@ -63,5 +118,24 @@ namespace ElMonte4.Controllers
                       
             });
         }
+        //buscar presos
+        public IHttpActionResult get(int id)
+        {
+            Preso preso = context.Presos.Find(id);
+
+            if (preso == null)//404 notfound
+            {
+                return NotFound();
+            }
+
+
+            return Ok(preso);//retornamos codigo 200 junto con el cliente buscado
+        }
+
+
+
+
+
+
     }
 }
