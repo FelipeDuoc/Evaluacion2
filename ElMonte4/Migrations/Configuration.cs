@@ -17,7 +17,41 @@ namespace ElMonte4.Migrations
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
+
+            context.Presos.AddOrUpdate(
+                p => p.Nombre,
+                    new Models.Preso { ID = 1, Rut = "123456", Nombre = "nombre preso", Apellido = "apellido preso", FechaNacimiento = Convert.ToDateTime("05-11-1990"), Domicilio = "domicilio prueba", sexo = 1  }
+                );
+
+            context.Condenas.AddOrUpdate(
+                c => c.ID,
+                    new Models.Condena { ID=1, FechaInicioCondena = Convert.ToDateTime("05-11-2016"), FechaCondena = Convert.ToDateTime("05-11-2016"),PresoId = 1, JuezId = 1}
+                );
+
+            context.CondenaDelitos.AddOrUpdate(
+               cd => cd.ID,
+                   new Models.CondenaDelito {condenaId = 1 , delitoId = 1, condena = 1}
+               );
+
+            context.Delitos.AddOrUpdate(
+               d => d.Nombre,
+                   new Models.Delito {ID = 1, Nombre = "Delito 1" , CondenaMinima = 1, CondenaMaxima = 5}
+               );
+
+            context.Juezs.AddOrUpdate(
+                j => j.Nombre,
+                    new Models.Juez { ID=1, Nombre = "nombre juez", Rut = "123456", Sexo = 1, Domicilio = "domicilio juez" }
+                );
+
         }
     }
 }
