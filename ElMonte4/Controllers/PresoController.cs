@@ -16,20 +16,6 @@ namespace ElMonte4.Controllers
             this.context = new ElMonte4DBContext();
         }
 
-        List<Preso> preso = new List<Preso>()
-        {
-            new Preso() {   Nombre = "Rodrigo",
-                            Apellido ="Berrios",
-                            Rut ="1111111",
-                            FechaNacimiento =Convert.ToDateTime("02/02/1994"),
-                            Domicilio = "pasaje 1 #456",
-                            sexo = 0,
-                            ID = 1,
-                            Condena = new List<Condena>() {
-                                 //new Condena() { }
-                            }
-            }
-        };
 
         //agrega preso
         //api/preso
@@ -67,7 +53,7 @@ namespace ElMonte4.Controllers
         //elimina preso
         public IHttpActionResult delete(int id)
         {
-            //buscamos el cliente a eliminar
+            //buscamos el preso a eliminar
             Preso preso = context.Presos.Find(id);
 
             if (preso == null) return NotFound();//404
@@ -103,8 +89,6 @@ namespace ElMonte4.Controllers
                     FechaInicioCondena = g.FechaInicioCondena,
                     FechaCondena = g.FechaCondena,
                     CondenaDelito =  g.CondenaDelito.Select(cd => new {
-                        ID = cd.ID,
-                        Condena = cd.condena,
                         Delito = new
                         {
                             ID = cd.Delito.ID,
@@ -129,7 +113,7 @@ namespace ElMonte4.Controllers
             }
 
 
-            return Ok(preso);//retornamos codigo 200 junto con el cliente buscado
+            return Ok(preso);//retornamos codigo 200 junto con el preso buscado
         }
 
 
