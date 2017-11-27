@@ -13,6 +13,7 @@ namespace ElMonte4.Models
         public DbSet<Delito> Delitos { get; set; }
         public DbSet<Juez> Juezs { get; set; }
         public DbSet<Preso> Presos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
     }
 }

@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace ElMonte4.Controllers
 {
+    [AuthenticationFilter]
     public class CondenaDelitoController : ApiController
     {
 

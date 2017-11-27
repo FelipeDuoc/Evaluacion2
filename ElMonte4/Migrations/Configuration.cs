@@ -57,6 +57,12 @@ namespace ElMonte4.Migrations
             //        new Models.Juez { ID=1, Nombre = "nombre juez", Rut = "123456", Sexo = 1, Domicilio = "domicilio juez" }
             //    );
 
+
+            context.Usuarios.AddOrUpdate(u => u.UserName,
+                new Models.Usuario() { UserName = "admin", Password = "admin" },
+                new Models.Usuario() { UserName = "rodrigo", Password = "1234"}
+                );
+
         }
     }
 }

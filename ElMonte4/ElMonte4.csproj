@@ -126,10 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AuthenticationFilter.cs" />
     <Compile Include="Controllers\CondenaController.cs" />
     <Compile Include="Controllers\CondenaDelitoController.cs" />
     <Compile Include="Controllers\DelitoController.cs" />
     <Compile Include="Controllers\JuezController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PresoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -138,13 +140,19 @@
     <Compile Include="Migrations\201711041156146_Primera.Designer.cs">
       <DependentUpon>201711041156146_Primera.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711262348215_SeAgregaUsuario.cs" />
+    <Compile Include="Migrations\201711262348215_SeAgregaUsuario.Designer.cs">
+      <DependentUpon>201711262348215_SeAgregaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Condena.cs" />
     <Compile Include="Models\CondenaDelito.cs" />
     <Compile Include="Models\Delito.cs" />
     <Compile Include="Models\ElMonte4DBContext.cs" />
     <Compile Include="Models\Juez.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Preso.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +171,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711041156146_Primera.resx">
       <DependentUpon>201711041156146_Primera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711262348215_SeAgregaUsuario.resx">
+      <DependentUpon>201711262348215_SeAgregaUsuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

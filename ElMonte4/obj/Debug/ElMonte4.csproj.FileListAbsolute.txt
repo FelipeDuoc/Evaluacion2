@@ -198,3 +198,4 @@ C:\Users\other\Desktop\Evaluacion2\ElMonte4\obj\Debug\ElMonte4.Migrations.Primer
 C:\Users\other\Desktop\Evaluacion2\ElMonte4\obj\Debug\ElMonte4.csproj.GenerateResource.Cache
 C:\Users\other\Desktop\Evaluacion2\ElMonte4\obj\Debug\ElMonte4.dll
 C:\Users\other\Desktop\Evaluacion2\ElMonte4\obj\Debug\ElMonte4.pdb
+C:\Users\other\Desktop\Evaluacion2\ElMonte4\obj\Debug\ElMonte4.Migrations.SeAgregaUsuario.resources

@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace ElMonte4.Controllers
 {
+    [AuthenticationFilter]
     public class PresoController : ApiController
     {
         private ElMonte4DBContext context;
